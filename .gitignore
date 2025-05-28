@@ -1,0 +1,10 @@
+*.exe
+*.out
+*.test
+coverage.out
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
