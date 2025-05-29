@@ -14,8 +14,15 @@ func NewCalendar(year int) *Calendar {
 	return &Calendar{
 		year: year,
 		holidays: []Holiday{
-			NewFixedHoliday("Christmas", time.December, 25, year),
+			NewFixedHoliday("Circumcision of Jesus", time.January, 1, year),
 			NewFixedHoliday("Epiphany", time.January, 6, year),
+			NewFixedHoliday("Annunciation", time.March, 25, year),
+			NewFixedHoliday("Transfiguration", time.August, 6, year),
+			NewFixedHoliday("Holy Cross Day", time.September, 14, year),
+			NewFixedHoliday("All Saints' Day", time.November, 1, year),
+			NewFixedHoliday("Immaculate Conception", time.December, 8, year),
+			NewFixedHoliday("Christmas", time.December, 25, year),
+			NewFixedHoliday("St. Stephen's Day", time.December, 26, year),
 			NewEasterSunday(year),
 		},
 	}
