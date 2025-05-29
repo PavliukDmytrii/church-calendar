@@ -1,6 +1,9 @@
 package holidays
 
-import "time"
+import (
+	"sort"
+	"time"
+)
 
 type Calendar struct {
 	year     int
@@ -19,5 +22,12 @@ func NewCalendar(year int) *Calendar {
 }
 
 func (c *Calendar) GetHolidays() []Holiday {
-	return c.holidays
+	holidaysCopy := make([]Holiday, len(c.holidays))
+	copy(holidaysCopy, c.holidays)
+
+	sort.Slice(holidaysCopy, func(i, j int) bool {
+		return holidaysCopy[i].Date().Before(holidaysCopy[j].Date())
+	})
+
+	return holidaysCopy
 }

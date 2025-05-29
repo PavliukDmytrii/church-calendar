@@ -13,6 +13,6 @@ func main() {
 
 	fmt.Printf("Church Holidays for %d:\n", year)
 	for _, h := range calendar.GetHolidays() {
-		fmt.Printf("%s: %s\n", h.Name(), h.Date().Format("2006-01-02"))
+		fmt.Printf("%-20s %s\n", h.Name(), h.Date().Format("Mon, Jan 2, 2006"))
 	}
 }
