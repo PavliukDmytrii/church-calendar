@@ -13,6 +13,7 @@ func NewCalendar(year int) *Calendar {
 		holidays: []Holiday{
 			NewFixedHoliday("Christmas", time.December, 25, year),
 			NewFixedHoliday("Epiphany", time.January, 6, year),
+			NewEasterSunday(year),
 		},
 	}
 }
