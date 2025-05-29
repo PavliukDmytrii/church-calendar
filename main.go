@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"time"
 
@@ -8,7 +9,10 @@ import (
 )
 
 func main() {
-	year := time.Now().Year()
+	yearFlag := flag.Int("year", time.Now().Year(), "Year for the church calendar")
+	flag.Parse()
+
+	year := *yearFlag
 	calendar := holidays.NewCalendar(year)
 
 	fmt.Printf("Church Holidays for %d:\n", year)
